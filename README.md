@@ -12,7 +12,7 @@
 
 
 ## 📖 Overview  
-![Overview Diagram](docs/overview.png)  
+![Overview Diagram](overview.jpg)  
 OT-Gym is a physics-based optical micro-robot simulation framework built on NVIDIA Isaac Sim to train reinforcement-learning algorithms for micro-manipulation tasks. This repo provides code and simulation environments for:  
 - **Bimanual haptic-feedback control**  
 - **RL-based autonomous control**  
