@@ -5,15 +5,17 @@
 **Dandan Zhang**, Imperial College London  
 
 ## 🔗 Project Links  
-- **Website:** [ot-gym.github.io](https://your-project-website.example.com)  
-- **Paper:** [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)  
+[![Paper](https://img.shields.io/badge/Paper-PDF-black)](https://your-paper-link.example.com)  
+[![arXiv](https://img.shields.io/badge/arXiv-Preprint-b31b1b)](https://arxiv.org/abs/XXXX.XXXXX)  
+[![Short Video](https://img.shields.io/badge/Short%20Video-Shorts-ff0000)](https://youtu.be/your-short-video)  
+[![Long Video](https://img.shields.io/badge/Long%20Video-YouTube-ff0000)](https://youtu.be/your-long-video)  
 
 ## 🛠️ Status & Requirements  
-![IsaacSim 3.10](docs/badges/isaacsim-3.10-blue.svg)  
-![Isaac Lab](docs/badges/isaaclab-python3.10-linux64-green.svg)  
-![Platform: Linux-64](docs/badges/platform-linux64.svg)  
-![ROS1](docs/badges/ros1-yellow.svg)  
-![License: Apache-2.0](docs/badges/license-apache2.0.svg)  
+![IsaacSim 4.1.0](https://img.shields.io/badge/IsaacSim-4.1.0-lightgrey)  
+![IsaacLab 1.0.0](https://img.shields.io/badge/IsaacLab-1.0.0-lightgrey)  
+![Python 3.10](https://img.shields.io/badge/Python-3.10-blue)  
+![Platform Linux-64](https://img.shields.io/badge/Platform-Linux--64-brightgreen)  
+![pre-commit enabled](https://img.shields.io/badge/pre--commit-enabled-green)  
 
 ## 📖 Overview  
 ![Overview Diagram](docs/overview.png)  
