@@ -1,89 +1,69 @@
-<!-- Logo & Title -->
-<p align="center">
-  <img src="logo.png" alt="Cell Sorting Simulation Platform Logo" width="120" />
-</p>
+# 📝 OT-Gym: Optical Tweezers Gym
 
-# Cell Sorting Simulation Platform
+## ✍️ Authors & Affiliations  
+**Zongcai Tan**, Imperial College London  
+**Dandan Zhang**, Imperial College London  
 
-[Project Page](#) · [Visualization Demo](#) · [Documentation](#) · [Tutorial Video](#)
+## 🔗 Project Links  
+- **Website:** [ot-gym.github.io](https://your-project-website.example.com)  
+- **Paper:** [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)  
 
----
+## 🛠️ Status & Requirements  
+![IsaacSim 3.10](docs/badges/isaacsim-3.10-blue.svg)  
+![Isaac Lab](docs/badges/isaaclab-python3.10-linux64-green.svg)  
+![Platform: Linux-64](docs/badges/platform-linux64.svg)  
+![ROS1](docs/badges/ros1-yellow.svg)  
+![License: Apache-2.0](docs/badges/license-apache2.0.svg)  
 
-## Introduction
+## 📖 Overview  
+![Overview Diagram](docs/overview.png)  
+OT-Gym is a physics-based optical micro-robot simulation framework built on NVIDIA Isaac Sim to train reinforcement-learning algorithms for micro-manipulation tasks. This repo provides code and simulation environments for:  
+- **Bimanual haptic-feedback control**  
+- **RL-based autonomous control**  
+- **Shared-control navigation for cell sorting**  
+using optical-tweezer-actuated microrobots.  
 
-This project includes the necessary code and simulation environment for **bimanual haptic feedback control**, **RL-based autonomous control**, and **shared control navigation for cell sorting**. To facilitate the demonstration of the visual rendering demo for visitors, the repository includes a [`Visualization_rendering_video.zip`](./Visualization_rendering_video.zip) which contains robot images at various poses and depths. Following the tutorial, you can replicate the cell sorting demo with ease.
+## ✨ Features  
 
----
+### 🤖 Shared OT Micromanipulation Process  
+![Shared OT Micromanipulation GIF](gifs/shared_ot_process.gif)  
+Users first indirectly grasp target cells using optical robots, then transport the cells to designated locations before releasing them.  
 
-## Usage
+### 📈 Effectiveness Validation Experiment  
+![Shared Control Validation GIF](gifs/shared_control_validation.gif)  
+Manual control is safe yet inefficient, autonomous control is efficient but collision-prone, and shared control balances efficiency with safety.  
 
-### Preparation
+## 📋 Requirements  
 
-- **Hardware Requirements**:
-  - Two computers with **ROS1** (ROS2 is not supported) for bimanual haptic feedback control.
-  - Only one computer (the main computer) needs to have **Isaac Sim** installed to run the RL navigation code.
-- **Software Requirements**:
-  - ROS1 installed on both machines.
-  - Isaac Sim installed on the main computer.
-  - Ensure that extraction paths do **not** contain any non-English (e.g., Chinese) characters.
+### 🖥️ Hardware  
+- Two **Geomagic Touch** haptic devices for teleoperation  
+- Two computers with **ROS 1** (ROS 2 _not_ supported)  
+- One “main” computer with NVIDIA Isaac Sim installed  
 
----
+### 💾 Software  
+- **ROS 1** on both machines  
+- **Isaac Sim** (latest) on the main machine  
+- Extraction paths must contain only ASCII characters  
+- All devices on the same LAN  
 
-### Bimanual Haptic Feedback Control
+## 📚 User Guide  
 
-1. **Download** the `Bimanual_haptic_feedback_control_code` package.
-2. **Deploy** the following workspaces on two separate computers configured with Geomagic Touch devices:
-   - `Left_hand_geomagic_touch_control`
-   - `Right_hand_geomagic_touch_control`
-3. **Compile** the code in each workspace (C++ ROS workspace) and complete the basic setup.
+### 1. Basic Setup  
+OT-Gym builds on NVIDIA Isaac Sim & Isaac Lab. See the [Isaac Lab install guide](https://docs.omniverse.nvidia.com/isaac/lab/latest/install.html) and [Isaac Sim docs](https://docs.omniverse.nvidia.com/isaac/reactivesim/latest/install.html).  
 
----
+### 2. Bimanual Haptic-Feedback Control  
+```bash
+# Download & unzip
+unzip Bimanual_haptic_feedback_control_code.zip
 
-### RL Navigation Setup
+# Machine 1 (Left hand)
+cd Left_hand_geomagic_touch_control
+catkin_make
 
-1. **Download** the `RL_navigation_code` and `3DModel` packages.
-2. **Extract** the files to directories without Chinese characters.
-3. **Placement**: Place the RL navigation code in the same directory as Isaac Sim's built-in standalone example code. This ensures that the code has access to the necessary compilation environment.
-4. **Update** file paths in the code where necessary:
-   - **DQN_env**: Drives the robot for shared control.
-   - **deploy_best_model**: Drives the robot for full autonomous control.
-   - **best_model_750.pth**: Contains the RL-trained network parameters.
-   - **smoothed_path.csv**: Stores the optimal path calculated by the A* algorithm.
+# Machine 2 (Right hand)
+cd Right_hand_geomagic_touch_control
+catkin_make
 
----
-
-### Simulation Environment
-
-1. **Download** all files starting with `Sim_env` and extract them.
-2. **Start ROS** (e.g., run `roscore`) on your laptop.
-3. **Load USD Files** in NVIDIA Omniverse via the ROS1 bridge and update all referenced USD file paths to avoid errors.
-
----
-
-### Running the Demo
-
-1. **Run** the Geomagic Touch code on the two computers.
-2. **Launch** the Isaac Sim simulation environment on the main computer.
-3. **Execute** the RL navigation code to run the cell sorting demo.
-
----
-
-## File Structure Explanation
-
-```tree
-.
-├── Bimanual_haptic_feedback_control_code.zip
-│   └── Contains the code for controlling Geomagic Touch devices.
-│       - Left_hand_geomagic_touch_control (deploy on machine 1)
-│       - Right_hand_geomagic_touch_control (deploy on machine 2)
-├── RL_navigation_code.zip
-│   ├── DQN_env               # Used for shared control in simulation
-│   ├── deploy_best_model     # Used for full autonomous control
-│   ├── best_model_750.pth    # RL-trained network parameters
-│   └── smoothed_path.csv     # Optimal path from A* algorithm
-├── 3DModel.zip
-│   └── Contains USD files for mechanical structures (converted from STL files)
-├── Rendered Images Raw Data.zip
-│   └── Contains rendered robot images with various poses and depths for demo
-└── Sim_env_* 
-    └── Files for setting up the simulation environment in Isaac Sim
+# On each machine
+roscore                # if not already running
+roslaunch left_touch_control demo.launch  # or right_touch_control
