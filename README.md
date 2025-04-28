@@ -45,7 +45,7 @@ Manual control is safe yet inefficient, autonomous control is efficient but coll
 ## 📚 User Guide  
 
 ### 1. Basic Setup  
-OT-Gym builds on NVIDIA Isaac Sim & Isaac Lab. See the [Isaac Lab install guide](https://docs.omniverse.nvidia.com/isaac/lab/latest/install.html) and [Isaac Sim docs](https://docs.omniverse.nvidia.com/isaac/reactivesim/latest/install.html).  
+OT-Gym builds on NVIDIA Isaac Sim. See the [Isaac Sim docs](https://developer.nvidia.com/isaac/sim). 
 
 ### 2. Bimanual Haptic-Feedback Teleoperation 
 Download the Bimanual_haptic_feedback_control_code.zip package. Deploy the Left_hand_geomagic_touch_control and Right_hand_geomagic_touch_control workspaces on the two computers configured with Geomagic Touch devices. Compile the code and complete the basic setup.
