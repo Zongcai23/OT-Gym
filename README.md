@@ -67,3 +67,67 @@ catkin_make
 # On each machine
 roscore                # if not already running
 roslaunch left_touch_control demo.launch  # or right_touch_control
+3. RL Navigation Setup
+bash
+复制
+编辑
+# Download & unzip RL navigation & 3D models
+unzip RL_navigation_code.zip
+unzip 3DModel.zip
+
+# Ensure ASCII-only paths
+# Place RL code alongside Isaac Sim examples
+mv RL_navigation_code path/to/IsaacSim/examples/
+
+# Update paths in code if needed:
+# - DQN_env → shared control
+# - deploy_best_model → autonomous control
+# - best_model_750.pth → RL weights
+# - smoothed_path.csv → A* path
+4. Simulation Environment
+bash
+复制
+编辑
+# Download & unzip Sim environment
+unzip Sim_env_*.zip
+
+# On main computer:
+roscore
+Load USD files via the ROS1 bridge in Omniverse
+
+Update USD file paths to avoid errors
+
+5. Running the Demo
+bash
+复制
+编辑
+# Start Geomagic Touch on both machines
+roslaunch left_touch_control demo.launch
+roslaunch right_touch_control demo.launch
+
+# Launch Isaac Sim on main machine
+./launchIsaacSim.sh
+
+# Run RL demo
+rosrun rl_navigation deploy_best_model.py
+📂 File Structure
+python
+复制
+编辑
+.
+├── docs/
+│   ├── badges/                     
+│   │   ├── isaacsim-3.10-blue.svg
+│   │   ├── isaaclab-python3.10-linux64-green.svg
+│   │   ├── platform-linux64.svg
+│   │   ├── ros1-yellow.svg
+│   │   └── license-apache2.0.svg
+│   └── overview.png                
+├── gifs/
+│   ├── shared_ot_process.gif
+│   └── shared_control_validation.gif
+├── Bimanual_haptic_feedback_control_code.zip
+├── RL_navigation_code.zip
+├── 3DModel.zip
+├── Rendered_Images_Raw_Data.zip
+└── Sim_env_*.zip
