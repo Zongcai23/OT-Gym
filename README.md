@@ -5,7 +5,7 @@
 **Dandan Zhang**, Imperial College London  
 
 ## 🔗 Project Links  
-[Paper](https://your-paper-link.example.com) | [Website]([https://arxiv.org/abs/XXXX.XXXXX](https://sites.google.com/view/otgym)) | [Short Video](https://youtu.be/your-short-video) | [Long Video](https://youtu.be/your-long-video)
+[Paper](https://your-paper-link.example.com) | [Website](https://sites.google.com/view/otgym) | [Short Video](https://youtu.be/your-short-video) | [Long Video](https://youtu.be/your-long-video)
 
 ## 🛠️ Status & Requirements  
 ![IsaacSim 3.10.0](https://img.shields.io/badge/IsaacSim-4.1.0-lightgrey) ![Python 3.10](https://img.shields.io/badge/Python-3.10-blue) ![Platform Linux-64](https://img.shields.io/badge/Platform-Linux--64-brightgreen) ![pre-commit enabled](https://img.shields.io/badge/pre--commit-enabled-green)
