@@ -1,14 +1,14 @@
-# 📝 OT-Gym: Optical Tweezers Gym
+# 📝 Interactive OT Gym: A Reinforcement Learning-Based Interactive Optical tweezer (OT)-Driven Microrobotics Simulation Platform
 
 ## ✍️ Authors & Affiliations  
 **Zongcai Tan**, Imperial College London  
 **Dandan Zhang**, Imperial College London  
 
 ## 🔗 Project Links  
-[Paper](https://your-paper-link.example.com) | [arXiv](https://arxiv.org/abs/XXXX.XXXXX) | [Short Video](https://youtu.be/your-short-video) | [Long Video](https://youtu.be/your-long-video)
+[Paper](https://your-paper-link.example.com) | [Website](https://arxiv.org/abs/XXXX.XXXXX) | [Short Video](https://youtu.be/your-short-video) | [Long Video](https://youtu.be/your-long-video)
 
 ## 🛠️ Status & Requirements  
-![IsaacSim 4.1.0](https://img.shields.io/badge/IsaacSim-4.1.0-lightgrey) ![IsaacLab 1.0.0](https://img.shields.io/badge/IsaacLab-1.0.0-lightgrey) ![Python 3.10](https://img.shields.io/badge/Python-3.10-blue) ![Platform Linux-64](https://img.shields.io/badge/Platform-Linux--64-brightgreen) ![pre-commit enabled](https://img.shields.io/badge/pre--commit-enabled-green)
+![IsaacSim 3.10.0](https://img.shields.io/badge/IsaacSim-4.1.0-lightgrey) ![Python 3.10](https://img.shields.io/badge/Python-3.10-blue) ![Platform Linux-64](https://img.shields.io/badge/Platform-Linux--64-brightgreen) ![pre-commit enabled](https://img.shields.io/badge/pre--commit-enabled-green)
 
 
 ## 📖 Overview  
